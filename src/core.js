@@ -37,9 +37,9 @@ export function next(state) {
     If the value at the end of the path is missing, make it 0
     Update the value with the third argument
 */
-export function vote(state, entry) {
-    return state.updateIn(
-        ['vote', 'tally', entry],
+export function vote(voteState, entry) {
+    return voteState.updateIn(
+        ['tally', entry],
         0,
         tally => tally + 1
     )
